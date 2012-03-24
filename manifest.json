@@ -1,0 +1,17 @@
+{
+  "name": "Simple Pool Game",
+  "description": "Free Pool/Billiards.  Built in HTML5.  Can be run offline.  No login required.",
+  "version": "0.0.3",
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  },
+  "permissions": [
+	"tts"
+	],
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  }
+} 

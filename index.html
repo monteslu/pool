@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+Copyright 2011 Luis Montes
+
+http://azprogrammer.com
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pool table with HTML5 Canvas and Box2D physics</title>
+    <link rel="author" href="http://profiles.google.com/monteslu">
+        <script src="scripts/dojo.js" djConfig="baseUrl: 'scripts/', modulePaths: {mwe: 'mwe'} "></script>
+		<script src="scripts/thirdparty/Box2d.min.js"></script>
+		<script src="scripts/thirdparty/stats.js"></script>
+    <script src="scripts/pool.js"></script>
+    <style>
+    body {
+      -webkit-transform: translateZ(0);
+    }
+    </style>
+  </head>
+  <body>
+   <center>
+    <br><br><br><br>
+    Drag a ball with the mouse, then release.  You can also drag a ball back to table after it goes in a pocket.<br><br>
+    <button id="crazyBtn">CRAZY Mode!</button>&nbsp;&nbsp;&nbsp;<button id="rack8Btn">Rack 8 ball</button>&nbsp;&nbsp;&nbsp;<button id="rack9Btn">Rack 9 ball</button>&nbsp;&nbsp;&nbsp;<button id="clearBtn">Clear table</button>&nbsp;&nbsp;&nbsp;shots: <span id="shotsDisp" style="font-weight: bold;">0</span>
+    <br><br>
+    <canvas id="canvas" width="700" height="440" ></canvas>
+    <br>
+    Written by Luis Montes.  Follow me on twitter: <a href="http://twitter.com/monteslu" target="_blank">@monteslu</a><br><br>
+    </center>
+
+  </body>
+</html>
