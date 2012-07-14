@@ -34,11 +34,11 @@ require({
   'mwe/ResourceManager'
 ], function(win, connect, ready, dom, domConstruct, domGeom, Box, RectangleEntity, PolygonEntity, Ball, GameCore, ResourceManager){
 
-  // var debug = true;
+  var debug = true;
 
-  // if(localStorage && localStorage.debug === 'n'){
-  //   debug = false;
-  // }
+  if(localStorage && localStorage.debug === 'n'){
+    debug = false;
+  }
 
   var crazyMode = false;
 
@@ -78,10 +78,10 @@ require({
     y: 400 / SCALE
   };
 
-  // var stats = new Stats();
-  // stats.domElement.style.position = 'absolute';
-  // stats.domElement.style.right    = '0px';
-  // stats.domElement.style.bottom   = '0px';
+  var stats = new Stats();
+  stats.domElement.style.position = 'fixed';
+  stats.domElement.style.right    = '0';
+  stats.domElement.style.bottom   = '10px';
   var prefMode = 8;
   if(localStorage && localStorage.prefMode){
     prefMode = localStorage.prefMode;
@@ -364,7 +364,7 @@ require({
     mouseDownPt = null;
     var pt = getGfxMouse(e);
     if(ballToHit){
-      var degrees =  getDegrees(ballToHit,pt); //theta * (180 / Math.PI);
+      var degrees = getDegrees(ballToHit, pt); //theta * (180 / Math.PI);
       console.log('degrees',degrees);
       box.applyImpulse(ballToHit.id, degrees + 90, Math.min( getDistance(ballToHit,pt) * 3, maxImpulse )  );
       incrementShots();
@@ -428,9 +428,9 @@ require({
   backImgCrazy = rm.loadImage('pool_table_700x385_crazy.png');
 
   ready(function(){
-    // if(debug){
-    //   domConstruct.place(stats.domElement, win.body(), 'last');
-    // }
+    if(debug){
+      domConstruct.place(stats.domElement, win.body(), 'last');
+    }
 
     for (var i = 0; i< initialState.length; i++) {
       var iS = initialState[i];
@@ -509,9 +509,9 @@ require({
             }
           }
         }
-        // if(debug){
-        //   stats.update();
-        // }
+        if(debug){
+          stats.update();
+        }
       },
       draw: function(ctx){
         var lineWidth;

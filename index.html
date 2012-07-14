@@ -8,27 +8,45 @@ http://azprogrammer.com
   <head>
     <meta charset="utf-8">
     <title>Pool table with HTML5 Canvas and Box2D physics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
     <link rel="author" href="http://profiles.google.com/monteslu">
     <script src="scripts/dojo.js"></script>
 		<script src="scripts/thirdparty/Box2D.js"></script>
-		<script src="scripts/thirdparty/stats.js"></script>
+		<script src="scripts/thirdparty/Stats.r10.js"></script>
     <script src="scripts/pool.js"></script>
     <style>
-    body {
-      -webkit-transform: translateZ(0);
-    }
+      body {
+        -webkit-transform: translateZ(0);
+        margin-bottom: 0;
+      }
+
+      @media (orientation: landscape) {
+        #container {
+          width: 815px;
+          margin: 0 auto;
+        }
+
+        #menu {
+          width: 100px;
+          float: left;
+          margin-right: 15px;
+        }
+      }
     </style>
   </head>
   <body>
-   <center>
-    <br><br><br><br>
-    Drag a ball with the mouse, then release.  You can also drag a ball back to table after it goes in a pocket.<br><br>
-    <button id="crazyBtn">CRAZY Mode!</button>&nbsp;&nbsp;&nbsp;<button id="rack8Btn">Rack 8 ball</button>&nbsp;&nbsp;&nbsp;<button id="rack9Btn">Rack 9 ball</button>&nbsp;&nbsp;&nbsp;<button id="clearBtn">Clear table</button>&nbsp;&nbsp;&nbsp;shots: <span id="shotsDisp" style="font-weight: bold;">0</span>
-    <br><br>
-    <canvas id="canvas" width="700" height="440" ></canvas>
-    <br>
-    Written by Luis Montes.  Follow me on twitter: <a href="http://twitter.com/monteslu" target="_blank">@monteslu</a><br><br>
-    </center>
-
+    <div id="container">
+      <div id="menu">
+        <div>Drag a ball with the mouse, then release.  You can also drag a ball back to table after it goes in a pocket.</div>
+        <button id="crazyBtn">CRAZY Mode!</button>
+        <button id="rack8Btn">Rack 8 ball</button>
+        <button id="rack9Btn">Rack 9 ball</button>
+        <button id="clearBtn">Clear table</button>
+        <div>shots: <span id="shotsDisp" style="font-weight: bold;">0</span></div>
+      </div>
+      <canvas id="canvas" width="700" height="440" ></canvas>
+      <!-- Written by Luis Montes.  Follow me on twitter: <a href="http://twitter.com/monteslu" target="_blank">@monteslu</a> -->
+    </div>
   </body>
 </html>
